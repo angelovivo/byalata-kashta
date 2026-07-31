@@ -1,2 +1,641 @@
 <!DOCTYPE html>
-<html lang="bg"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Бялата къща - Калугерица</title><link rel="stylesheet" href="byalata_style.css"></head><body><header class="hero"><div class="hero-text"><h1>БЯЛАТА КЪЩА</h1><p>Вашето място за спокойствие, уют и незабравими моменти край Мадарските скали.</p><h2>145 € / вечер</h2><div class="buttons"><a class="btn primary" href="tel:0888217620">Обади се</a><a class="btn secondary" href="#gallery">Галерия</a></div></div></header><section class="icons"><div>8 гости</div><div>4 спални</div><div>Басейн</div><div>Камина</div><div>Барбекю</div><div>Паркинг</div><div>Wi‑Fi</div></section><section class="welcome"><div><h2>Добре дошли</h2><p>Отпуснете се край басейна и се насладете на спокойствието на природата.</p></div><div><img src="living-room.jpg" alt=""></div></section><section class="info-bar"><div>145 € / вечер</div><div>До 8 гости</div><div><a href="tel:0888217620">0888 217 620</a></div></section><section id="gallery" class="gallery-section"><h2>Галерия</h2><div class="gallery"><img src="house.jpg"><img src="pool.jpg"><img src="living-room.jpg"><img src="kitchen.jpg"><img src="garden.jpg"></div></section><section class="places"><h2>Какво можете да посетите?</h2><div class="places-grid"><div>Мадарският конник</div><div>Мадарските скали</div><div>Плиска</div><div>Велики Преслав</div><div>Шуменската крепост</div><div>Винарски изби</div></div></section><section class="contact"><h2>Резервации</h2><p>Телефон: 0888 217 620</p><a class="btn primary" href="tel:0888217620">Резервирай сега</a></section><footer><h3>БЯЛАТА КЪЩА</h3><p>Калугерица</p><p>Бутикова вила с частен басейн.</p></footer></body></html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бялата къща - Калугерица | Бутикова вила</title>
+    <!-- Font Awesome за иконите -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts за изискани шрифтове -->
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;650;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Базови стилове */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            background-color: #fcfbfa;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Хедър и Навигация */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            padding: 20px 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0));
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo i { font-size: 2rem; }
+        .logo-text h1 {
+            font-family: 'Marcellus', serif;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+        .logo-text p {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            border-bottom: 2px solid #fff;
+            padding-bottom: 5px;
+        }
+        .lang-select {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Hero Секция */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            padding-top: 80px;
+        }
+        .hero-content h2 {
+            font-family: 'Marcellus', serif;
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+        .hero-content p.subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        .hero-content p.location {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .btn {
+            padding: 12px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: #d4af37;
+            color: #222;
+            border: none;
+        }
+        .btn-primary:hover { background-color: #c19a28; }
+        .btn-secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+        .btn-secondary:hover { background-color: #fff; color: #222; }
+
+        /* Удобства (Бързи факти) */
+        .amenities-bar {
+            background-color: #f7f5f0;
+            border-bottom: 1px solid #e5e0d8;
+            padding: 30px 0;
+        }
+        .amenities-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+            gap: 20px;
+        }
+        .amenity-item {
+            flex: 1;
+            min-width: 120px;
+        }
+        .amenity-item i {
+            font-size: 1.8rem;
+            color: #8c764b;
+            margin-bottom: 10px;
+        }
+        .amenity-item p {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* За Вилата (Описание) */
+        .about-section {
+            padding: 80px 0;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .about-text .tagline {
+            color: #d4af37;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .about-text h3 {
+            font-family: 'Marcellus', serif;
+            font-size: 2.2rem;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Цени и Капацитет лента */
+        .pricing-bar {
+            background-color: #fdfcfa;
+            border: 1px solid #eadecc;
+            border-radius: 6px;
+            padding: 25px;
+            margin-bottom: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+        .price-box, .capacity-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .price-box i, .capacity-box i {
+            font-size: 2.5rem;
+            color: #8c764b;
+        }
+        .price-info h4, .capacity-info h4 {
+            font-size: 0.85rem;
+            color: #8c764b;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .price-info .amount {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .cta-box {
+            background-color: #2d5a3c;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 4px;
+            text-align: center;
+            min-width: 280px;
+        }
+        .cta-box .phone {
+            font-size: 1.4rem;
+            font-weight: 700;
+            display: block;
+        }
+        .cta-box .subtext {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        /* Секция Галерия */
+        .gallery-section {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #f7f5f0;
+        }
+        .section-title {
+            font-family: 'Marcellus', serif;
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            letter-spacing: 2px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Забележителности (Какво да посетите) */
+        .sightseeing-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .sights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .sight-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        .sight-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+        .sight-info {
+            padding: 15px;
+        }
+        .sight-info h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .sight-info p {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* Футър */
+        footer {
+            background-color: #1c261f;
+            color: #fff;
+            padding: 40px 0 20px 0;
+            font-size: 0.9rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr;
+            gap: 40px;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 30px;
+        }
+        .footer-logo .logo-text h1 { font-size: 1.8rem; }
+        .footer-logo .motto {
+            font-family: 'Marcellus', serif;
+            font-style: italic;
+            color: #d4af37;
+            margin-top: 10px;
+        }
+        .footer-contacts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .contact-item i {
+            color: #d4af37;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        .footer-map img {
+            width: 100%;
+            border-radius: 4px;
+        }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        /* Адаптивност за мобилни устройства */
+        @media (max-width: 960px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-contacts { grid-template-columns: 1fr; text-align: left; max-width: 300px; margin: 0 auto; }
+            nav { display: none; } /* За истински сайт тук се прави мобилно меню */
+        }
+        @media (max-width: 600px) {
+            .hero-content h2 { font-size: 2.2rem; }
+            .pricing-bar { flex-direction: column; text-align: center; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ХЕДЪР -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-house-chimney-window"></i>
+                <div class="logo-text">
+                    <h1>БЯЛАТА КЪЩА</h1>
+                    <p>— Калугерица —</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Начало</a></li>
+                    <li><a href="#">За вилата</a></li>
+                    <li><a href="#">Удобства</a></li>
+                    <li><a href="#">Галерия</a></li>
+                    <li><a href="#">Районът</a></li>
+                    <li><a href="#">Контакти</a></li>
+                </ul>
+            </nav>
+            <select class="lang-select">
+                <option>BG</option>
+                <option>EN</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- HERO СЕКЦИЯ -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>БЯЛАТА КЪЩА<br>КАЛУГЕРИЦА</h2>
+            <p class="subtitle">Бутикова вила с частен басейн до Мадарските скали</p>
+            <p class="location"><i class="fa-solid fa-location-dot"></i> На 2 км от историческия резерват „Мадара“</p>
+            <div class="hero-buttons">
+                <a href="tel:0888217620" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Обади се сега</a>
+                <a href="#" class="btn btn-secondary">Виж галерия</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ЛЕНТА С УДОБСТВА -->
+    <section class="amenities-bar">
+        <div class="container amenities-container">
+            <div class="amenity-item">
+                <i class="fa-solid fa-users"></i>
+                <p>До 8 гости</p>
+            </div>
+            <div class="amenity-item">
+                <i class="fa-solid fa-bed"></i>
+                <p>4 спални със самостоятелни бани</p>
+            </div>
+            <div class="amenity-item">
+                <i class="fa-solid fa-water-ladder"></i>
+                <p>Частен басейн</p>
+            </div>
+            <div class="amenity-item">
+                <i class="fa-solid fa-fire"></i>
+                <p>Камина</p>
+            </div>
+            <div class="amenity-item">
+                <i class="fa-solid fa-paw"></i>
+                <p>Домашни любимци са добре дошли</p>
+            </div>
+            <div class="amenity-item">
+                <i class="fa-solid fa-square-p"></i>
+                <p>Безплатен паркинг</p>
+            </div>
+            <div class="amenity-item">
+                <i class="fa-solid fa-wifi"></i>
+                <p>Безплатен Wi-Fi</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ЗА ВИЛАТА & ЦЕНИ -->
+    <section class="about-section">
+        <div class="container">
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="tagline">Добре дошли!</p>
+                    <h3>Вашето място за спокойствие, уют и незабравими моменти.</h3>
+                    <p>„Бялата къща“ е самостоятелна вила в подножието на Мадарските скали. Предлага всичко необходимо за една незабравима почивка – простор, комфорт и уединение сред красивата природа.</p>
+                    <p>Идеална за семейства и компании приятели, които искат да се насладят на тишина, чист въздух и истинска почивка.</p>
+                </div>
+                <div class="about-image">
+                    <!-- Замени URL адреса с истинска снимка на интериора -->
+                    <img src="https://via.placeholder.com/600x400" alt="Интериор Бялата Къща">
+                </div>
+            </div>
+
+            <br><br>
+
+            <!-- Блок Цени и Капацитет -->
+            <div class="pricing-bar">
+                <div class="price-box">
+                    <i class="fa-solid fa-tags"></i>
+                    <div class="price-info">
+                        <h4>Цена за цялата вила</h4>
+                        <span class="amount">145 € <small>/ вечер</small></span>
+                        <p style="font-size:0.8rem; color:#666;">Цялата къща е само за вас!</p>
+                    </div>
+                </div>
+                
+                <div class="capacity-box">
+                    <i class="fa-solid fa-user-group"></i>
+                    <div class="capacity-info">
+                        <h4>Максимален капацитет</h4>
+                        <span class="amount">8 гости</span>
+                        <p style="font-size:0.8rem; color:#666;">По-малко от 20 € на човек при пълен капацитет!</p>
+                    </div>
+                </div>
+
+                <div class="cta-box">
+                    <span class="phone"><i class="fa-solid fa-phone"></i> 0888 217 620</span>
+                    <span class="subtext">Резервирай с едно обаждане</span>
+                    <p style="font-size: 0.75rem; margin-top: 5px; font-weight: bold;">Работим целогодишно</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ГАЛЕРИЯ -->
+    <section class="gallery-section">
+        <div class="container">
+            <h3 class="section-title">Галерия</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200" alt="Вила"></div>
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200" alt="Басейн"></div>
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200" alt="Дневна"></div>
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200" alt="Кухня"></div>
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200" alt="Двор"></div>
+            </div>
+            <a href="#" class="btn btn-secondary" style="color: #222; border-color: #8c764b;">Виж всички снимки</a>
+        </div>
+    </section>
+
+    <!-- ЗАБЕЛЕЖИТЕЛНОСТИ -->
+    <section class="sightseeing-section">
+        <div class="container">
+            <h3 class="section-title">Какво можете да посетите?</h3>
+            <div class="sights-grid">
+                <div class="sight-card">
+                    <img src="https://via.placeholder.com/200x120" alt="Мадарските скали">
+                    <div class="sight-info">
+                        <h4>Мадарските скали</h4>
+                        <p>2 км</p>
+                    </div>
+                </div>
+                <div class="sight-card">
+                    <img src="https://via.placeholder.com/200x120" alt="Мадарският конник">
+                    <div class="sight-info">
+                        <h4>Мадарският конник</h4>
+                        <p>2 км</p>
+                    </div>
+                </div>
+                <div class="sight-card">
+                    <img src="https://via.placeholder.com/200x120" alt="Плиска">
+                    <div class="sight-info">
+                        <h4>Плиска</h4>
+                        <p>15 км</p>
+                    </div>
+                </div>
+                <div class="sight-card">
+                    <img src="https://via.placeholder.com/200x120" alt="Велики Преслав">
+                    <div class="sight-info">
+                        <h4>Велики Преслав</h4>
+                        <p>20 км</p>
+                    </div>
+                </div>
+                <div class="sight-card">
+                    <img src="https://via.placeholder.com/200x120" alt="Шуменската крепост">
+                    <div class="sight-info">
+                        <h4>Шуменската крепост</h4>
+                        <p>15 км</p>
+                    </div>
+                </div>
+                <div class="sight-card">
+                    <img src="https://via.placeholder.com/200x120" alt="Винарски изби">
+                    <div class="sight-info">
+                        <h4>Винарски изби</h4>
+                        <p>в района</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФУТЪР -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <div class="logo" style="justify-content: center;">
+                        <i class="fa-solid fa-house-chimney-window"></i>
+                        <div class="logo-text" style="text-align: left;">
+                            <h1>БЯЛАТА КЪЩА</h1>
+                            <p>— Калугерица —</p>
+                        </div>
+                    </div>
+                    <p class="motto">Място за спомени</p>
+                </div>
+                
+                <div class="footer-contacts">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <p>с. Калугерица, общ. Каспичан<br>Обл. Шумен</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <p>0888 217 620</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-arrow"></i>
+                        <div>
+                            <p>На 2 км от историческия резерват „Мадара“</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <p>byalatakashta@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item" style="grid-column: span 2;">
+                        <i class="fa-brands fa-facebook"></i>
+                        <div>
+                            <p>Бялата къща Калугерица</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-map">
+                    <!-- Примерно статично изображение на карта -->
+                    <img src="https://via.placeholder.com/250x120" alt="Карта">
+                    <button class="btn btn-primary" style="font-size: 0.75rem; width: 100%; padding: 8px; margin-top: 5px;">Виж на карта</button>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Бялата къща – Калугерица. Всички права запазени.</p>
+                <p><a href="#" style="text-decoration: underline;">Уеб дизайн и разработка</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
