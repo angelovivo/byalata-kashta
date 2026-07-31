@@ -677,6 +677,65 @@ class="btn btn-gallery">
 </div>
 
 </section>
+<section class="reviews">
+
+<h2>Нашите гости казват</h2>
+
+<div class="reviews-grid">
+
+<div class="review-card">
+<p>
+"Прекрасно място! Басейнът и дворът са невероятни. Ще се върнем отново."
+</p>
+<h3>★★★★★</h3>
+</div>
+
+<div class="review-card">
+<p>
+"Идеално за семейна почивка. Къщата е просторна и много уютна."
+</p>
+<h3>★★★★★</h3>
+</div>
+
+<div class="review-card">
+<p>
+"Спокойствие, природа и отлични условия. Горещо препоръчваме!"
+</p>
+<h3>★★★★★</h3>
+</div>
+
+</div>
+
+</section>
+<section class="choose-us">
+
+<h2>Защо да изберете Бялата къща?</h2>
+
+<div class="choose-grid">
+
+<div class="choose-card">
+<h3>✓ Самостоятелна вила</h3>
+<p>Цялата къща и дворът са само за Вас.</p>
+</div>
+
+<div class="choose-card">
+<h3>✓ Частен басейн</h3>
+<p>Насладете се на спокойствие и прохлада през летните дни.</p>
+</div>
+
+<div class="choose-card">
+<h3>✓ Отлична локация</h3>
+<p>Само на няколко минути от Мадарските скали.</p>
+</div>
+
+<div class="choose-card">
+<h3>✓ Комфорт и уют</h3>
+<p>Прекрасно място за семейни празници и почивка.</p>
+</div>
+
+</div>
+
+</section>
 <footer>
 
 <footer>
@@ -696,7 +755,35 @@ class="btn btn-gallery">
 <p>
 © 2026 Всички права запазени.
 </p>
+<section class="check-section">
 
+<h2>Информация за престоя</h2>
+
+<div class="check-grid">
+
+<div class="check-card">
+<h3>Настаняване</h3>
+<p>След 14:00 ч.</p>
+</div>
+
+<div class="check-card">
+<h3>Напускане</h3>
+<p>До 11:00 ч.</p>
+</div>
+
+<div class="check-card">
+<h3>Минимален престой</h3>
+<p>1 нощувка</p>
+</div>
+
+<div class="check-card">
+<h3>Резервации</h3>
+<p>Само по телефон</p>
+</div>
+
+</div>
+
+</section>
 </footer>
 </footer>
 
@@ -719,6 +806,24 @@ window.open(img.src,"_blank");
 
 📞
 
+</a>
+<script>
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+sections.forEach((section) => {
+    observer.observe(section);
+});
+</script>
+<a href="tel:0888217620" class="floating-reserve">
+Резервирай
 </a>
 </body>
 </html>
