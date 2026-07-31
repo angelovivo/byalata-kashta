@@ -1,17 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="bg">
+
 <head>
 
-<title>Бялата къща</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Бялата къща - Калугерица</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 
-margin:0;
-font-family:Georgia,serif;
+font-family:'Poppins',sans-serif;
+background:#faf8f2;
+color:#222;
 
 }
 
+/* HERO */
 
 .hero{
 
@@ -19,25 +39,40 @@ height:100vh;
 
 background:
 linear-gradient(
-90deg,
-rgba(0,0,0,0.7),
-rgba(0,0,0,0.1)
+rgba(0,0,0,.45),
+rgba(0,0,0,.45)
 ),
-
-url("house.jpg");
+url("images/hero.jpg");
 
 background-size:cover;
 background-position:center;
 
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
 color:white;
+
+padding:30px;
 
 }
 
 
+/* MENU */
+
 nav{
+
+position:absolute;
+top:0;
+left:0;
+width:100%;
 
 display:flex;
 justify-content:space-between;
+align-items:center;
+
 padding:30px;
 
 }
@@ -45,107 +80,233 @@ padding:30px;
 
 .logo{
 
+font-family:'Playfair Display',serif;
 font-size:30px;
 font-weight:bold;
 
 }
 
 
-.logo span{
-
-font-size:20px;
-
-}
-
-
-ul{
+.menu{
 
 display:flex;
-gap:30px;
-
+gap:25px;
 list-style:none;
 
 }
 
 
-.hero-text{
+.menu a{
 
-padding-left:60px;
-padding-top:180px;
-max-width:600px;
-
-}
-
-
-h1{
-
-font-size:80px;
-margin-bottom:0;
+text-decoration:none;
+color:white;
+font-weight:600;
 
 }
 
 
-h2{
+/* TITLE */
 
-font-size:50px;
-margin-top:0;
+.hero h1{
+
+font-family:'Playfair Display',serif;
+font-size:65px;
+margin-bottom:10px;
+
+}
+
+
+.hero h2{
+
+font-size:30px;
+font-weight:300;
+margin-bottom:20px;
 
 }
 
 
-.hero-text p{
+.hero p{
 
-font-size:28px;
-line-height:1.5;
+font-size:20px;
+max-width:700px;
+line-height:1.7;
+margin-bottom:40px;
 
 }
 
+
+/* BUTTONS */
 
 .buttons{
 
-margin-top:40px;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
 
 }
 
 
-.buttons a{
+.btn{
 
-padding:20px 35px;
+padding:18px 35px;
 
-border-radius:10px;
+border-radius:50px;
+
+font-size:18px;
+font-weight:bold;
 
 text-decoration:none;
 
-font-weight:bold;
-
-margin-right:20px;
+transition:.3s;
 
 }
 
 
-.call{
+.btn-call{
 
-background:#d8b06b;
+background:#d9b36c;
 color:black;
 
 }
 
 
-.gallery{
+.btn-gallery{
 
 border:2px solid white;
 color:white;
 
 }
 
-body{
-...
+
+.btn:hover{
+
+transform:translateY(-3px);
+
 }
 
-.hero{
-...
+
+/* ADVANTAGES */
+
+.advantages{
+
+background:white;
+padding:80px 40px;
+
 }
 
+
+.section-title{
+
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+font-family:'Playfair Display',serif;
+
+}
+
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+}
+
+
+.card{
+
+background:#faf8f2;
+
+padding:35px;
+
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:0 0 20px rgba(0,0,0,.08);
+
+font-size:18px;
+
+}
+
+
+/* PRICE */
+
+.price{
+
+padding:100px 30px;
+
+text-align:center;
+
+background:#17372d;
+color:white;
+
+}
+
+
+.price h2{
+
+font-size:60px;
+
+margin-bottom:20px;
+
+}
+
+
+.price p{
+
+font-size:22px;
+
+}
+
+
+/* FOOTER */
+
+footer{
+
+padding:50px;
+
+text-align:center;
+
+background:#0d211a;
+color:white;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero h2{
+
+font-size:22px;
+
+}
+
+.menu{
+
+display:none;
+
+}
+
+.logo{
+
+font-size:22px;
+
+}
+
+}
 
 </style>
 
@@ -153,73 +314,132 @@ body{
 
 <body>
 
-<header class="hero">
+
+<section class="hero">
 
 <nav>
 
 <div class="logo">
-БЯЛАТА КЪЩА<br>
-<span>КАЛУГЕРИЦА</span>
+
+БЯЛАТА КЪЩА
+
 </div>
 
-<ul>
+<ul class="menu">
 
-<li>Начало</li>
-<li>За вилата</li>
-<li>Удобства</li>
-<li>Галерия</li>
-<li>Районът</li>
-<li>Контакти</li>
+<li><a href="#">Начало</a></li>
+<li><a href="#">За вилата</a></li>
+<li><a href="#">Галерия</a></li>
+<li><a href="#">Цени</a></li>
+<li><a href="#">Контакти</a></li>
 
 </ul>
 
 </nav>
 
 
-<div class="hero-text">
-
 <h1>БЯЛАТА КЪЩА</h1>
 
 <h2>КАЛУГЕРИЦА</h2>
 
 <p>
-Бутикова вила с частен басейн
-до Мадарските скали.
-</p>
 
-<p>
-На 2 км от исторически резерват "Мадара"
+Бутикова вила с частен басейн за до 8 гости.
+Насладете се на спокойствие, уют и незабравими моменти сред природата.
+
 </p>
 
 
 <div class="buttons">
 
 <a href="tel:0888217620"
-class="call">
+class="btn btn-call">
 
-ОБАДИ СЕ СЕГА
+ОБАДИ СЕ
 
 </a>
-
 
 <a href="#gallery"
-class="gallery">
+class="btn btn-gallery">
 
-ВИЖ ГАЛЕРИЯ
+ГАЛЕРИЯ
 
 </a>
 
 </div>
 
+</section>
+
+
+
+<section class="advantages">
+
+<h2 class="section-title">
+
+Нашите предимства
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+До 8 гости
 </div>
 
-</header>
+<div class="card">
+Частен басейн
+</div>
 
-<header class="hero">
+<div class="card">
+4 спални
+</div>
 
-...
+<div class="card">
+4 бани
+</div>
 
-</header>
+<div class="card">
+Закрито барбекю
+</div>
+
+<div class="card">
+Камина
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="price">
+
+<h2>
+
+145 € / вечер
+
+</h2>
+
+<p>
+
+Цялата къща е само за вас.
+
+</p>
+
+</section>
+
+
+
+<footer>
+
+БЯЛАТА КЪЩА - КАЛУГЕРИЦА<br><br>
+
+Телефон за резервации:<br>
+
+0888 217 620
+
+</footer>
+
 
 </body>
 </html>
