@@ -477,4 +477,67 @@ color:white;
 
 color:white;
 
+}/* PLACES */
+
+.places{
+
+padding:90px 30px;
+background:#ffffff;
+
+}
+
+.places h2{
+
+text-align:center;
+font-size:48px;
+margin-bottom:50px;
+font-family:'Playfair Display',serif;
+
+}
+
+.places-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+.place-card{
+
+background:#faf8f2;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 0 15px rgba(0,0,0,.08);
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.place-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+.place-card h3{
+
+font-size:24px;
+margin-bottom:15px;
+color:#17372d;
+
+}
+
+.place-card p{
+
+font-size:18px;
+
 }
