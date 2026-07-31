@@ -423,4 +423,58 @@ color:#17372d;
 font-size:18px;
 line-height:1.8;
 
+}/* INFO BAR */
+
+.info-bar{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
+padding:40px 30px;
+
+background:#f4f0e8;
+
+}
+
+.info-box{
+
+background:white;
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 0 15px rgba(0,0,0,.08);
+
+text-align:center;
+
+}
+
+.info-box h3{
+
+font-size:32px;
+margin-bottom:15px;
+color:#17372d;
+
+}
+
+.info-box p{
+
+font-size:18px;
+line-height:1.6;
+
+}
+
+.phone-box{
+
+background:#2d6a4f;
+color:white;
+
+}
+
+.phone-box h3{
+
+color:white;
+
 }
