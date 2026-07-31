@@ -515,6 +515,20 @@ class="btn btn-gallery">
 
 </footer>
 
+<script>
 
+const images=document.querySelectorAll(".gallery-grid img");
+
+images.forEach(img=>{
+
+img.addEventListener("click",()=>{
+
+window.open(img.src,"_blank");
+
+});
+
+});
+
+</script>
 </body>
 </html>
