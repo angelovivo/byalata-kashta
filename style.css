@@ -359,4 +359,68 @@ footer p{
 
 font-size:18px;
 
+}/* WHY US */
+
+.why-us{
+
+padding:100px 30px;
+background:white;
+
+}
+
+.why-us h2{
+
+text-align:center;
+font-size:50px;
+margin-bottom:60px;
+font-family:'Playfair Display',serif;
+
+}
+
+.why-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+}
+
+.why-card{
+
+padding:40px;
+
+background:#faf8f2;
+
+border-radius:25px;
+
+box-shadow:0 0 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.why-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.why-card h3{
+
+margin-bottom:20px;
+
+font-size:28px;
+
+color:#17372d;
+
+}
+
+.why-card p{
+
+font-size:18px;
+line-height:1.8;
+
 }
